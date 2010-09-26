@@ -4,7 +4,6 @@
    xmlns:cco="http://purl.org/ontology/cco/core#"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:ex="http://example.org/"
-   xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:prv="http://purl.org/ontology/prv/core#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -42,7 +41,7 @@
     <prv:object_property rdf:resource="http://purl.org/ontology/cco/core#topic"/>
     <prv:reification_class rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
     <prv:shortcut_property rdf:resource="http://purl.org/ontology/cco/core#characteristic"/>
-    <prv:shortcut_property rdf:resource="http://purl.org/ontology/cco/core#skill"/>
+    <prv:shortcut rdf:resource="http://purl.org/ontology/cco/core#skill"/>
     <prv:subject_property rdf:resource="http://purl.org/ontology/cco/core#agent"/>
   </prv:PropertyReification>
   <bibo:Document rdf:about="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_cco_example.rdf">

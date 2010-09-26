@@ -7,7 +7,6 @@
 @prefix ex:		<http://example.org/> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:	<http://www.w3.org/2002/07/owl#> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 
 <http://smiy.sourceforge.net/prv/examples/N3/prv_-_cco_example.n3>
@@ -20,7 +19,7 @@ Characteristics Vocabulary, modeled with help of the Property Reification Vocabu
       dc:title "Cognitive Characteristics Ontology Example"@en .
 
 ex:SkillReification a prv:PropertyReification ;
-    prv:shortcut_property cco:skill ;
+    prv:shortcut cco:skill ;
     prv:shortcut_property cco:characteristic ;
     prv:reification_class cco:CognitiveCharacteristic ;
     prv:subject_property cco:agent ;
