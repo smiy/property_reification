@@ -1,0 +1,50 @@
+# baseURI: http://example.org/
+
+@prefix prv:      <http://purl.org/ontology/prv/core#> .
+@prefix cco:      <http://purl.org/ontology/cco/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:		<http://example.org/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	<http://www.w3.org/2002/07/owl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+
+<http://smiy.sourceforge.net/prv/examples/N3/prv_-_cco_example.n3>
+      rdf:type bibo:Document ;
+      dc:creator <http://foaf.me/zazi#me> ;
+      dc:date "2010-09-26T16:59:52+01:00"^^xsd:dateTime ;
+      dc:description """This document includes an example of a property reification descriptions, related to the Cognitive 
+Characteristics Vocabulary, modeled with help of the Property Reification Vocabulary."""@en ;
+      rdfs:seeAlso <http://purl.org/ontology/prv/core#> ;
+      dc:title "Cognitive Characteristics Ontology Example"@en .
+
+ex:SkillReification a prv:PropertyReification ;
+    prv:shortcut cco:skill ;
+    prv:reification_class cco:CognitiveCharacteristic ;
+    prv:subject_property cco:agent ;
+    prv:object_property cco:topic .
+
+ex:ExpertiseReification a prv:PropertyReification ;
+    prv:shortcut cco:expertise ;
+    prv:reification_class cco:CognitiveCharacteristic ;
+    prv:subject_property cco:agent ;
+    prv:object_property cco:topic .
+
+ex:InterestReification a prv:PropertyReification ;
+    prv:shortcut cco:interest ;
+    prv:reification_class cco:CognitiveCharacteristic ;
+    prv:subject_property cco:agent ;
+    prv:object_property cco:topic .
+
+ex:BeliefReification a prv:PropertyReification ;
+    prv:shortcut cco:belief ;
+    prv:reification_class cco:CognitiveCharacteristic ;
+    prv:subject_property cco:agent ;
+    prv:object_property cco:topic .
+
+ex:SettingReification a prv:PropertyReification ;
+    prv:shortcut cco:setting ;
+    prv:reification_class cco:CognitiveCharacteristic ;
+    prv:subject_property cco:agent ;
+    prv:object_property cco:topic .

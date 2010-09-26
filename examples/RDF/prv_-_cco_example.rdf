@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:bibo="http://purl.org/ontology/bibo/"
+   xmlns:cco="http://purl.org/ontology/cco/core#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:ex="http://example.org/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:prv="http://purl.org/ontology/prv/core#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xml:base="http://example.org/">
+  <prv:PropertyReification rdf:about="http://example.org/BeliefReification">
+    <prv:object_property rdf:resource="http://purl.org/ontology/cco/core#topic"/>
+    <prv:reification_class rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+    <prv:shortcut rdf:resource="http://purl.org/ontology/cco/core#belief"/>
+    <prv:subject_property rdf:resource="http://purl.org/ontology/cco/core#agent"/>
+  </prv:PropertyReification>
+  <prv:PropertyReification rdf:about="http://example.org/ExpertiseReification">
+    <prv:object_property rdf:resource="http://purl.org/ontology/cco/core#topic"/>
+    <prv:reification_class rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+    <prv:shortcut rdf:resource="http://purl.org/ontology/cco/core#expertise"/>
+    <prv:subject_property rdf:resource="http://purl.org/ontology/cco/core#agent"/>
+  </prv:PropertyReification>
+  <prv:PropertyReification rdf:about="http://example.org/InterestReification">
+    <prv:object_property rdf:resource="http://purl.org/ontology/cco/core#topic"/>
+    <prv:reification_class rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+    <prv:shortcut rdf:resource="http://purl.org/ontology/cco/core#interest"/>
+    <prv:subject_property rdf:resource="http://purl.org/ontology/cco/core#agent"/>
+  </prv:PropertyReification>
+  <prv:PropertyReification rdf:about="http://example.org/SettingReification">
+    <prv:object_property rdf:resource="http://purl.org/ontology/cco/core#topic"/>
+    <prv:reification_class rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+    <prv:shortcut rdf:resource="http://purl.org/ontology/cco/core#setting"/>
+    <prv:subject_property rdf:resource="http://purl.org/ontology/cco/core#agent"/>
+  </prv:PropertyReification>
+  <prv:PropertyReification rdf:about="http://example.org/SkillReification">
+    <prv:object_property rdf:resource="http://purl.org/ontology/cco/core#topic"/>
+    <prv:reification_class rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+    <prv:shortcut rdf:resource="http://purl.org/ontology/cco/core#skill"/>
+    <prv:subject_property rdf:resource="http://purl.org/ontology/cco/core#agent"/>
+  </prv:PropertyReification>
+  <bibo:Document rdf:about="http://smiy.sourceforge.net/prv/examples/N3/prv_-_cco_example.n3">
+    <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-26T16:59:52+01:00</dc:date>
+    <dc:description xml:lang="en">This document includes an example of a property reification descriptions, related to the Cognitive &#xD;
+Characteristics Vocabulary, modeled with help of the Property Reification Vocabulary.</dc:description>
+    <dc:title xml:lang="en">Cognitive Characteristics Ontology Example</dc:title>
+    <rdfs:seeAlso rdf:resource="http://purl.org/ontology/prv/core#"/>
+  </bibo:Document>
+</rdf:RDF>
