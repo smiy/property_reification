@@ -20,31 +20,36 @@ Characteristics Vocabulary, modeled with help of the Property Reification Vocabu
       dc:title "Cognitive Characteristics Ontology Example"@en .
 
 ex:SkillReification a prv:PropertyReification ;
-    prv:shortcut cco:skill ;
+    prv:shortcut_property cco:skill ;
+    prv:shortcut_property cco:characteristic ;
     prv:reification_class cco:CognitiveCharacteristic ;
     prv:subject_property cco:agent ;
     prv:object_property cco:topic .
 
 ex:ExpertiseReification a prv:PropertyReification ;
     prv:shortcut cco:expertise ;
+    prv:shortcut_property cco:characteristic ;
     prv:reification_class cco:CognitiveCharacteristic ;
     prv:subject_property cco:agent ;
     prv:object_property cco:topic .
 
 ex:InterestReification a prv:PropertyReification ;
     prv:shortcut cco:interest ;
+    prv:shortcut_property cco:characteristic ;
     prv:reification_class cco:CognitiveCharacteristic ;
     prv:subject_property cco:agent ;
     prv:object_property cco:topic .
 
 ex:BeliefReification a prv:PropertyReification ;
     prv:shortcut cco:belief ;
+    prv:shortcut_property cco:characteristic ;
     prv:reification_class cco:CognitiveCharacteristic ;
     prv:subject_property cco:agent ;
     prv:object_property cco:topic .
 
 ex:SettingReification a prv:PropertyReification ;
     prv:shortcut cco:setting ;
+    prv:shortcut_property cco:characteristic ;
     prv:reification_class cco:CognitiveCharacteristic ;
     prv:subject_property cco:agent ;
     prv:object_property cco:topic .

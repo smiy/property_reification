@@ -1,4 +1,4 @@
-# Saved by TopBraid on Sun Sep 26 17:53:04 CEST 2010
+# Saved by TopBraid on Sun Sep 26 19:25:14 CEST 2010
 # baseURI: http://purl.org/ontology/prv/core#
 # imports: http://purl.org/vocab/vann/
 # imports: http://purl.org/dc/elements/1.1/
@@ -63,6 +63,17 @@ prv:shortcut
       rdfs:domain prv:PropertyReification ;
       rdfs:isDefinedBy prv: ;
       rdfs:label "has shortcut"@en ;
+      rdfs:range rdf:Property ;
+      status:term_status "testing"@en .
+
+prv:shortcut_property
+      rdf:type rdf:Property ;
+      rdfs:comment """Relates to the property of the reification class,  which relates to the predicate of the \"shortcut relation\". So 
+that the specific property reification can be \"verified\" (the property of the prv:shortcut relation and this one associated by the 
+referred shortcut property should be equal)."""@en ;
+      rdfs:domain prv:PropertyReification ;
+      rdfs:isDefinedBy prv: ;
+      rdfs:label "has shortcut property"@en ;
       rdfs:range rdf:Property ;
       status:term_status "testing"@en .
 
