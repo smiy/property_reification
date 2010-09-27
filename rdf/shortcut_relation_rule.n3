@@ -1,0 +1,21 @@
+# baseURI: http://purl.org/ontology/prv/core#
+
+@prefix prv: <http://purl.org/ontology/prv/core#> .
+
+{ 
+   ?s ?sc ?o .
+
+   ?pr a prv:PropertyReification ;
+      prv:shortcut ?sc ;
+      prv:reification_class ?rc ;
+      prv:shortcut_property ?scp ;
+      prv:subject_property ?sp ;
+      prv:object_property ?op .
+}
+=>
+{
+   ?r a ?rc ;
+      ?scp ?sc ;
+      ?sp ?s ;
+      ?op ?o .
+} .
