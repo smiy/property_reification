@@ -111,9 +111,10 @@ version="XHTML+RDFa 1.0">
 
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/prv/core#" property="dc:description">
-The <em>Property Reification Vocabulary</em> specification provides a vocabulary  for describing the ontology design pattern of property reification on/ for the Semantic Web. That means the 
+The <em>Property Reification Vocabulary</em> specification provides a vocabulary  for describing the ontology design pattern of <em>property reification</em> on/ for the Semantic Web. That means the 
 semantic relation of a "shortcut relation" (subject, predicate, object) with its detailed description of the relationship. This document contains a RDFa description of the 
-<em>Property Reification Vocabulary</em> and some additional information and examples.</p>
+<em>Property Reification Vocabulary</em> and some additional information and examples.<br/><br/>
+<strong>Note: this is only a proposal/draft of the <em>Property Reification Vocabulary</em> and parts of it might be changed in the near future (work in progress)</strong></p>
 
   <div class="status">
     <h2>Status of This Document</h2>
@@ -180,7 +181,7 @@ relations" /></div>
 
   <h3 id="sec-cco-example">Cognitive Characteristics Ontology Example</h3>
 
-   <p about="http://purl.org/ontology/prv/propertyreification.html">RDF/Turtle representation of a property reification example of the <a rel="rdfs:seeAlso" 
+   <p about="http://purl.org/ontology/prv/propertyreification.html">RDF/Turtle representation of a <em>property reification</em> definitions example of the <a rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a> created with help of the <em>Property Reification Vocabulary</em> (see 
 also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_cco_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
 href="http://smiy.sourceforge.net/prv/examples/N3/prv_-_cco_example.n3">N3</a> for downloadable representations of this example):</p>
@@ -228,7 +229,18 @@ ex:SettingReification a prv:PropertyReification ;
 </pre>
   </div>
 
-  <p about="http://purl.org/ontology/prv/propertyreification.html">TODO</p>
+  <p about="http://purl.org/ontology/prv/propertyreification.html">In the example above one can see <em>property reification</em> definitions that utilize terms of the <a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a>. The example includes <em>property reification</em> definitions for the 
+shortcut relation properties <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#skill"><em>cco:skill</em></a>, <a rel="rdfs:seeAlso"
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#expertise"><em>cco:expertise</em></a>, and <a rel="rdfs:seeAlso"
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#interest"><em>cco:interest</em></a>. Thereby, every <em>property reification</em> definition utilizes the same reification, <a 
+rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a>. Furthermore, also the <em>subject</em> 
+and <em>object property</em> are in every definition the same, <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#agent"><em>cco:agent</em></a> (as 
+<em>subject property</em>) and <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic"><em>cco:topic</em></a> (as <em>object property</em>).<br/>
+Due to the <em>property reification</em> definitions from above and the <em>shortcut relation</em> and <em>property reification</em> rules (see <a href="#sec-for">here</a>) one can clearly 
+reason that the <em>shortcut relations</em> and <em>reification class</em> instances in the <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#sec-soccer-example">soccer example</a> of the <a 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a> are belonging semantically together (here pairwise).</p>
 
   <!-- ================================================================== -->
 
@@ -240,8 +252,8 @@ ex:SettingReification a prv:PropertyReification ;
 
   <p about="http://purl.org/ontology/prv/propertyreification.html">The <em>Property Reification Vocabulary</em> should enable a reasoning engine to apply the following implications, which are 
 represented as <a rel="rdfs:seeAlso" href="http://www.w3.org/DesignIssues/Notation3"><em>N3</em></a> rules (see also <a rel="rdfs:seeAlso" 
-href="http://smiy.sourceforge.net/prv/rdf/property_reification_rule.n3">property reification rule</a> and <a rel="rdfs:seeAlso" 
-href="http://smiy.sourceforge.net/prv/rdf/shortcut_relation_rule.n3">shortcut relation rule</a> for downloadable representations of these rules):</p>
+href="http://smiy.sourceforge.net/prv/rdf/shortcut_relation_rule.n3"><em>shortcut relation</em> rule</a> and  <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/prv/rdf/property_reification_rule.n3"><em>property reification</em> rule</a> for downloadable representations of these rules):</p>
 
 <div class="example">
 <pre>
@@ -265,7 +277,7 @@ href="http://smiy.sourceforge.net/prv/rdf/shortcut_relation_rule.n3">shortcut re
 </pre>
 </div>
 
-<p>That means, if a <a href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong> exists, which 
+<p>The <em>shortcut relation</em> rule above means, if a <a href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> instance <strong>?pr</strong> exists, which 
 includes</p>
 <ul>
     <li>the <strong>shortcut relation</strong> property <strong>?sc</strong> (associated by <a href="http://purl.org/ontology/prv/propertyreification.html#shortcut"><em>prv:shortcut</em></a>), </li>
@@ -316,7 +328,7 @@ includes</p>
 </pre>
 </div>
 
-<p>That means, if a <strong>shortcut relation</strong> exists, which has</p>
+<p>The <em>property reification</em> rule above means, if a <strong>shortcut relation</strong> exists, which has</p>
 <ul>
     <li>as its <em>subject</em> the particular <strong>?s</strong>,</li>
     <li> as its <em>predicate</em> the property <strong>?sc</strong> and </li>
@@ -336,7 +348,9 @@ includes</p>
     <li>the <strong>shortcut relation</strong> <em>subject</em> <strong>?s</strong> (associated by the defined <em>subject property</em> <strong>?sp</strong>) and</li>
     <li>the <strong>shortcut relation</strong> <em>object</em> <strong>?o</strong> (associated by the defined  <em>object property</em> <strong>?op</strong>).</li>
 </ul>
-
+<p>With help of the <em>property reification</em> and <em>shortcut relation</em> rule a reasoning engine should not only
+be able to infer (construct) related representations, but also to reason that existing <em>shortcut relations</em>
+and instances of <em>reification classes</em> belonging semantically together.</p>
   <h2 id="sec-bg">Background</h2>
 
   <p>TODO</p>
