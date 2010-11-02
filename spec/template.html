@@ -111,8 +111,8 @@ version="XHTML+RDFa 1.0">
 
 <h2 id="sec-status">Abstract</h2>
 <p about="http://purl.org/ontology/prv/core#" property="dc:description">
-The <em>Property Reification Vocabulary</em> specification provides a vocabulary  for describing the ontology design pattern of <em>property reification</em> on/ for the Semantic Web. That means the 
-semantic relation of a "shortcut relation" (subject, predicate, object) with its detailed description of the relationship. This document contains a RDFa description of the 
+The <em>Property Reification Vocabulary</em> specification provides a vocabulary  for describing the ontology design pattern of <em>property reification</em> on/ for the Semantic Web. That 
+means the semantic relation of a <em>shortcut relation</em> (subject, predicate, object) with its detailed description of the relationship. This document contains a RDFa description of the 
 <em>Property Reification Vocabulary</em> and some additional information and examples.<br/><br/>
 <strong>Note: this is only a proposal/draft of the <em>Property Reification Vocabulary</em> and parts of it might be changed in the near future (work in progress)</strong></p>
 
@@ -123,8 +123,9 @@ semantic relation of a "shortcut relation" (subject, predicate, object) with its
 The <em>Property Reification Vocabulary</em> is design after a <a rel="rdfs:seeAlso" href="http://esw.w3.org/PropertyReificationVocabulary">proposal</a> made by <a 
 href="http://mud.cz/">Jiří Procházka</a>, <a href="http://richard.cyganiak.de/">Richard Cyganiak</a> and <a href="http://tobyinkster.co.uk/">Toby Inkster</a> and extended by <a 
 href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a>. It should reflect the important use case and ontology design pattern of <em>property reification</em>, 
-which is different from <em>statement reification</em> (see also <a rel="rdfs:seeAlso" href="http://www.w3.org/TR/swbp-n-aryRelations/#RDFReification">this explanation</a>). This gives 
-ontology designers the freedom to separate such <em>property reification</em> definitions from their core ontology and enable hence the opportunity to make them optional.<br/> 
+which is different from <em>statement reification</em> (see also <a href="#sec-bg">background</a> and <a rel="rdfs:seeAlso" 
+href="http://www.w3.org/TR/swbp-n-aryRelations/#RDFReification">this explanation</a>). This gives ontology designers the freedom to separate such <em>property reification</em> definitions 
+from their core ontology and enable hence the opportunity to make them optional.<br/> 
 The template of this specification is derived from the <a rel="rdfs:seeAlso" href="http://xmlns.com/foaf/spec/">FOAF Vocabulary Specification</a>, which was created by <a rel="rdfs:seeAlso" 
 href="http://danbri.org/">Dan Brickley</a> and <a rel="rdfs:seeAlso" href="http://nicecupoftea.org/">Libby Miller</a>, and the <a rel="rdfs:seeAlso" href="http://musicontology.com/">
 Music Ontology Specification</a>, which was created by <a rel="rdfs:seeAlso" href="http://moustaki.org/">Yves Raimond</a>. It was modified and extended by Bob Ferris. Furthermore, a modified 
@@ -162,7 +163,7 @@ Property Reification Vocabulary for this specification (see <a rel="rdfs:seeAlso
   <h2 id="glance">The Property Reification Vocabulary at a glance</h2>
 
 <p>The <a href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> concept as graph with relations:</p>
-<div about="http://purl.org/ontology/prv/core#" rel="rdfs:seeAlso">
+<div id="property-reification-graphic" about="http://purl.org/ontology/prv/core#" rel="rdfs:seeAlso">
 <img src="http://smiy.sourceforge.net/prv/gfx/prv_-_property_reification.gif" title="The property reification concept as graph with relations" alt="The property reification as graph with 
 relations" /></div>
 
@@ -176,8 +177,49 @@ relations" /></div>
   <h2 id="sec-example">Examples</h2>
 
   <ul>
+  		<li><a href="sec-simple-example">A Simple Example</a></li>
   		<li><a href="#sec-cco-example">Cognitive Characteristic Ontology Example</a></li>
   </ul>
+
+ <h3 id="sec-cco-example">A Simple Example</h3>
+
+   <p about="http://purl.org/ontology/prv/propertyreification.html">RDF/Turtle representation of a simple <em>property reification</em> definition example created with help of the 
+<em>Property Reification Vocabulary</em> (see also <a rel="rdfs:seeAlso" href="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf">RDF</a> and <a rel="rdfs:seeAlso" 
+href="http://smiy.sourceforge.net/prv/examples/N3/prv_-_simple_example.n3">N3</a> for downloadable representations of this example) that includes also an example of its application:</p>
+
+  <div class="example">
+    <pre>
+@prefix prv: &lt;http://purl.org/ontology/prv/core#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix ex:  &lt;http://example.org/&gt; .
+&nbsp;
+ex:ReadReification a prv:PropertyReification ;
+&nbsp;&nbsp;&nbsp;prv:shortcut ex:hasRead ;
+&nbsp;&nbsp;&nbsp;prv:reification_class ex:ReadingEvent ;
+&nbsp;&nbsp;&nbsp;prv:subject_property ex:reader ;
+&nbsp;&nbsp;&nbsp;prv:object_property ex:book .
+&nbsp;
+# The quick way
+&lt;#alice&gt; ex:hasRead &lt;#beekeeping&gt; .
+&nbsp;
+# The detailed way
+&lt;#myreadingevent&gt; a ex:ReadingEvent ;
+&nbsp;&nbsp;&nbsp;ex:reader &lt;#alice&gt; ;
+&nbsp;&nbsp;&nbsp;ex:book &lt;#beekeeping&gt; ;
+&nbsp;&nbsp;&nbsp;ex:when "2010-11-01"^^xsd:date .
+</pre>
+  </div>
+
+  <p>In the example above one can see a <em>property reification</em> definition that utilize some temporarily defined terms and an example of its application. The example includes a 
+<em>property reification</em> definition for the <em>shortcut relation</em> property <em>ex:hasRead</em>. Thereby, this <em>property reification</em> definition utilizes the 
+<em>reification class</em> <em>ex:ReadingEvent</em>. Furthermore, the <em>subject property</em> is <em>ex:reader</em> and the <em>object property</em> is <em>ex:book</em>.<br/>
+Due to the <em>property reification</em> definition from above and the <em>shortcut relation</em> and <em>property reification</em> rules (see <a href="#sec-for">here</a>) one can clearly 
+reason that the <em>shortcut relation</em> (see "The quick way") and <em>reification class</em> instance (see "The detailed way") in the example are belonging semantically together. The 
+detailed description is additionally associated with a date (<em>ex:when</em>), that represents when the person (<em>&lt;#alice&gt;</em>) read the book (<em>&lt;#beekeeping&gt;</em>).<br/>
+The <em>property reification</em> definition of this example makes especially use of the <em>reification class</em> (<a 
+href="http://purl.org/ontology/prv/propertyreification.html#reification_class"><em>prv:reification_class</em></a>) to utilize a <em>reification class</em> and a <em>shortcut relation</em> 
+property (<a href="http://purl.org/ontology/prv/propertyreification.html#shortcut"><em>prv:shortcut</em></a>) as identification terms to establish the semantic relation between a 
+<em>shortcut relation</em> and its belonging <em>reification class</em> instance(s).</p>
 
   <h3 id="sec-cco-example">Cognitive Characteristics Ontology Example</h3>
 
@@ -231,22 +273,43 @@ ex:SettingReification a prv:PropertyReification ;
 
   <p about="http://purl.org/ontology/prv/propertyreification.html">In the example above one can see <em>property reification</em> definitions that utilize terms of the <a 
 href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a>. The example includes <em>property reification</em> definitions for the 
-shortcut relation properties <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#skill"><em>cco:skill</em></a>, <a rel="rdfs:seeAlso"
+<em>shortcut relation</em> properties <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#skill"><em>cco:skill</em></a>, <a rel="rdfs:seeAlso"
 href="http://purl.org/ontology/cco/cognitivecharacteristics.html#expertise"><em>cco:expertise</em></a>, and <a rel="rdfs:seeAlso"
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html#interest"><em>cco:interest</em></a>. Thereby, every <em>property reification</em> definition utilizes the same reification, <a 
-rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a>. Furthermore, also the <em>subject</em> 
-and <em>object property</em> are in every definition the same, <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#agent"><em>cco:agent</em></a> (as 
-<em>subject property</em>) and <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic"><em>cco:topic</em></a> (as <em>object property</em>).<br/>
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#interest"><em>cco:interest</em></a>. Thereby, every <em>property reification</em> definition utilizes the same 
+<em>reification class</em>, <a rel="rdfs:seeAlso" href="http://purl.org/ontology/cco/cognitivecharacteristics.html#CognitiveCharacteristic"><em>cco:CognitiveCharacteristic</em></a>. 
+Furthermore, also the <em>subject</em> and <em>object property</em> are in every definition the same, <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#agent"><em>cco:agent</em></a> (as <em>subject property</em>) and <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html#topic"><em>cco:topic</em></a> (as <em>object property</em>).<br/>
 Due to the <em>property reification</em> definitions from above and the <em>shortcut relation</em> and <em>property reification</em> rules (see <a href="#sec-for">here</a>) one can clearly 
 reason that the <em>shortcut relations</em> and <em>reification class</em> instances in the <a rel="rdfs:seeAlso" 
 href="http://purl.org/ontology/cco/cognitivecharacteristics.html#sec-soccer-example">soccer example</a> of the <a 
-href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a> are belonging semantically together (here pairwise).</p>
+href="http://purl.org/ontology/cco/cognitivecharacteristics.html"><em>Cognitive Characteristics Ontology</em></a> are belonging semantically together (here pairwise).<br/>
+The <em>property reification</em> definitions of this example make especially use of the <em>shortcut property</em> (<a 
+href="http://purl.org/ontology/prv/propertyreification.html#shortcut_property"><em>prv:shortcut_property</em></a>) to utilize a <em>reification class</em> for several 
+<em>shortcut relation</em> properties (<em>property reification</em> definitions).</p>
 
   <!-- ================================================================== -->
 
 
  <h2 id="sec-intro">Introduction: Property Reification Vocabulary Basics</h2>
-
+ 
+ <p about="http://purl.org/ontology/prv/propertyreification.html"><a href="#property-reification-graphic">The graphic above</a> illustrates the <a 
+href="http://purl.org/ontology/prv/propertyreification.html#PropertyReification"><em>prv:PropertyReification</em></a> concept and its related properties as extension of <a rel="rdfs:seeAlso" 
+href="http://www.w3.org/TR/rdf-schema/"><em>RDFS</em></a>. It associates</p>
+<ul>
+    <li>the <em>reification class</em> (<a href="http://purl.org/ontology/prv/propertyreification.html#reification_class"><em>prv:reification_class</em></a>),</li>
+    <li>the property of the <em>shortcut relation</em> (<a href="http://purl.org/ontology/prv/propertyreification.html#shortcut"><em>prv:shortcut</em></a>),</li>
+    <li>the <em>shortcut property</em> (<a href="http://purl.org/ontology/prv/propertyreification.html#shortcut_property"><em>prv:shortcut_property</em></a>), that means, the property that 
+relates to the property of the <em>shortcut relation</em> in <em>reification class</em> instances,</li>
+    <li>the <em>subject property</em> (<a href="http://purl.org/ontology/prv/propertyreification.html#subject_property"><em>prv:subject_property</em></a>), that means, the property that 
+relates to a subject of the <em>shortcut relation</em> in <em>reification class</em> instances, and</li>
+    <li>the <em>object property</em> (<a href="http://purl.org/ontology/prv/propertyreification.html#object_property"><em>prv:object_property</em></a>), that means, the property that relates 
+to a object of the <em>shortcut relation</em> in <em>reification class</em> instances,</li>
+</ul>
+<p>of a <em>property reification</em> definition. This design provides the opportunity to utilize a <em>reification class</em> for several <em>property reification</em> definitions. That means, 
+at least also for several <em>shortcut relation</em> definitions (properties), due to a matching between the <em>shortcut relation</em> property defined in a <em>property reification</em> 
+definition by <a href="http://purl.org/ontology/prv/propertyreification.html#shortcut"><em>prv:shortcut</em></a> and the associated <em>shortcut relation</em> property by the 
+<em>shortcut property</em> (<a href="http://purl.org/ontology/prv/propertyreification.html#shortcut_property"><em>prv:shortcut_property</em></a>) in a <em>reification class</em> instance.</p>
 
   <h2 id="sec-for">What's the Property Reification Vocabulary for?</h2>
 
@@ -351,9 +414,29 @@ includes</p>
 <p>With help of the <em>property reification</em> and <em>shortcut relation</em> rule a reasoning engine should not only
 be able to infer (construct) related representations, but also to reason that existing <em>shortcut relations</em>
 and instances of <em>reification classes</em> belonging semantically together.</p>
+
   <h2 id="sec-bg">Background</h2>
 
-  <p>TODO</p>
+  <p about="http://purl.org/ontology/prv/propertyreification.html">It seems that there is still a lack in modelling contextual information for <em>Semantic Graph</em> triples and deploying 
+this knowledge representation reusable in a distributed <em>Linked Data</em> environment. Although, there exists probably applicable solutions for representing <em>external context</em>*, 
+e.g. <a rel="rdfs:seeAlso" href="http://www.w3.org/2004/03/trix/"><em>Named Graphs</em></a> or <a rel="rdfs:seeAlso" href="http://sw.deri.org/2008/07/n-quads/"><em>N-Quads</em></a>. However, 
+these methods are not really appropriated to represent <em>internal context</em>* by keeping clear semantics regarding their described <em>Semantic Graph</em> triples (information resource). 
+Even the <a rel="rdfs:seeAlso" href="http://www.w3.org/TR/rdf-mt/#Reif">existing method for RDF statements</a>, <a rel="rdfs:seeAlso" 
+href="http://www.w3.org/TR/rdf-primer/#reification"><em>RDF Reification</em></a> (<em>statement reification</em>), has no clear semantics between the statement triple(s) and their 
+reification information resource(s). Furthermore, this method is intended to be applied at the instance level. Although, it might be good to be able to apply reification definition also on 
+the vocabulary level. That means, to reify the semantic relation that is established by a property. This kind of reification is then called <em>property reification</em>.<br />
+Therefore, the simple semantic relation, represented by subject, predicate and object, is now defined as <em>shortcut relation</em>. Thereby, the predicate is always the same property for a 
+single <em>shortcut relation</em> definition. Beyond, the class that enables a detailed description of such a <a rel="rdfs:seeAlso" 
+href="http://www.w3.org/TR/swbp-n-aryRelations/"><em>n-ary relation</em></a> is called <em>reification class</em>.<br />
+Due to the reason, that there wasn’t a published vocabulary that addresses a mapping and its semantics between <em>shortcut relations</em> and <em>reification classes</em> and vice versa, 
+<a href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> co-designed the <em>Property Reification Vocabulary</em>. This vocabulary is designed after a <a 
+href="http://esw.w3.org/PropertyReificationVocabulary">proposal</a> made by <a href="http://mud.cz/">Jiří Procházka</a>, <a href="http://richard.cyganiak.de/">Richard Cyganiak</a> and <a 
+href="http://tobyinkster.co.uk/">Toby Inkster</a> and was also extended by <a href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> to enable further functionality. It should 
+reflect the important use case and ontology design pattern of <em>property reification</em>. This gives ontology designers the freedom to separate such <em>property reification</em> 
+definitions from their core ontology definition and enable hence the opportunity to make them optional.<br/>
+<br/>
+*) see <a rel="rdfs:seeAlso" href="http://www.dbis.informatik.uni-frankfurt.de/~tolle/Publications/2004/AISTA04.pdf">"Understanding Data by their Context Using RDF"</a> [Tolle, Karsten; 
+2004] for a definition of <em>external</em> and <em>internal context</em></p>
 
   <h2 id="sec-standards">The Property Reification Vocabulary and Standards</h2>
 
