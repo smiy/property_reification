@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:bibo="http://purl.org/ontology/bibo/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:ex="http://example.org/"
+   xmlns:prv="http://purl.org/ontology/prv/core#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xml:base="http://example.org/">
+  <rdf:Description rdf:about="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf#alice">
+    <ex:hasRead rdf:resource="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf#beekeeping"/>
+  </rdf:Description>
+  <ex:ReadingEvent rdf:about="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf#myreadingevent">
+    <ex:book rdf:resource="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf#beekeeping"/>
+    <ex:reader rdf:resource="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf#alice"/>
+    <ex:when rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-11-01</ex:when>
+  </ex:ReadingEvent>
+  <prv:PropertyReification rdf:about="http://example.org/ReadReification">
+    <prv:object_property rdf:resource="http://example.org/book"/>
+    <prv:reification_class rdf:resource="http://example.org/ReadingEvent"/>
+    <prv:shortcut rdf:resource="http://example.org/hasRead"/>
+    <prv:subject_property rdf:resource="http://example.org/reader"/>
+  </prv:PropertyReification>
+  <bibo:Document rdf:about="http://smiy.sourceforge.net/prv/examples/RDF/prv_-_simple_example.rdf">
+    <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
+    <dc:creator rdf:resource="http://tobyinkster.co.uk/#i"/>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-11-02T10:00:52+01:00</dc:date>
+    <dc:description xml:lang="en">This document includes a simple example of a property reification description modeled with help of the Property Reification Vocabulary and an example of its &#xD;
+application.</dc:description>
+    <dc:title xml:lang="en">Simple Property Reification Example</dc:title>
+    <rdfs:seeAlso rdf:resource="http://purl.org/ontology/prv/core#"/>
+  </bibo:Document>
+</rdf:RDF>

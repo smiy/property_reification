@@ -13,7 +13,7 @@
       rdf:type bibo:Document ;
       dc:creator <http://foaf.me/zazi#me> ;
       dc:date "2010-09-26T16:59:52+01:00"^^xsd:dateTime ;
-      dc:description """This document includes an example of a property reification descriptions, related to the Cognitive 
+      dc:description """This document includes an example of property reification descriptions, related to the Cognitive 
 Characteristics Vocabulary, modeled with help of the Property Reification Vocabulary."""@en ;
       rdfs:seeAlso <http://purl.org/ontology/prv/core#> ;
       dc:title "Cognitive Characteristics Ontology Example"@en .

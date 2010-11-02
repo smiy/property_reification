@@ -1,0 +1,33 @@
+# baseURI: http://example.org/
+
+@prefix prv:      <http://purl.org/ontology/prv/core#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:		<http://example.org/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+
+<http://smiy.sourceforge.net/prv/examples/N3/prv_-_simple_example.n3>
+      rdf:type bibo:Document ;
+      dc:creator <http://tobyinkster.co.uk/#i> , <http://foaf.me/zazi#me> ;
+      dc:date "2010-11-02T10:00:52+01:00"^^xsd:dateTime ;
+      dc:description """This document includes a simple example of a property reification description modeled with help of the Property Reification Vocabulary and an example of its 
+application."""@en ;
+      rdfs:seeAlso <http://purl.org/ontology/prv/core#> ;
+      dc:title "Simple Property Reification Example"@en .
+
+ex:ReadReification a prv:PropertyReification ;
+    prv:reification_class ex:ReadingEvent ;
+    prv:subject_property ex:reader ;
+    prv:object_property ex:book ;
+    prv:shortcut ex:hasRead .
+
+# The detailed way
+<#myreadingevent> a ex:ReadingEvent ;
+    ex:reader <#alice> ;
+    ex:book <#beekeeping> ;
+    ex:when "2010-11-01"^^xsd:date .
+
+# The quick way
+<#alice> ex:hasRead <#beekeeping> .
