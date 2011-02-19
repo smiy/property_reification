@@ -13,3 +13,12 @@ Version 0.1 (September 2010)
           relation". So that the specific property reification can be "verified" (the property of the prv:shortcut relation and this 
           one associated by the referred shortcut property should be equal)
  * ADDED: prv:object_property - relates to the property of the reification class, which relates to the object of the "shortcut relation"
+ 
+============================
+Version 0.11 (February 2011)
+============================ 
+ * ADDED: PRV rules description in SPIN
+ * ADDED: prv:reified - to relate an statement identifier of a shortcut relation with an instance of a reification class. Although, this 
+          is at the moment not really applicable, because it requires a notation for statement identifier as optional fourth element of a 
+          tuple; that means, triple + statement identifier
+ * IMPORTED: PRV rules library with spin:imports to the vocabulary specification

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:prv="http://purl.org/ontology/prv/core#"
+   xmlns:prvr="http://purl.org/ontology/prv/rules#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:sp="http://spinrdf.org/sp#"
+   xmlns:spin="http://spinrdf.org/spin#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xml:base="http://purl.org/ontology/prv/rules#">
+  <owl:Ontology rdf:about="http://purl.org/ontology/prv/rules#">
+    <dc:creator rdf:resource="http://foaf.me/zazi#me"/>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-02-19T14:19:53+01:00</dc:date>
+    <dc:description xml:lang="en">This is the rule library for the Property Reification Vocabulary. It includes two rules.&#xD;
+The first one, the property reification rule, describes the mapping from a shortcut relation to an instance of a reification class.&#xD;
+The secone one, the shortcut relation rule, describes the mapping from an instance of a reification class to a shortcut relation.</dc:description>
+    <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property Reification Vocabulary Rules</dc:title>
+    <vann:preferredNamespacePrefix>prvr</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://purl.org/ontology/prv/rules#</vann:preferredNamespaceUri>
+    <rdf:type rdf:resource="http://spinrdf.org/spin#LibraryOntology"/>
+    <rdfs:seeAlso rdf:resource="http://purl.org/ontology/prv/core#"/>
+    <owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+    <owl:imports rdf:resource="http://purl.org/ontology/prv/core"/>
+    <owl:imports rdf:resource="http://purl.org/vocab/vann/"/>
+    <owl:imports rdf:resource="http://spinrdf.org/sp"/>
+    <owl:imports rdf:resource="http://spinrdf.org/spin"/>
+    <owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:versionInfo>
+  </owl:Ontology>
+  <spin:Template rdf:about="http://purl.org/ontology/prv/rules#PropertyReificationRule">
+    <spin:body>
+      <sp:Construct>
+        <sp:templates>
+          <rdf:Description>
+            <rdf:first>
+              <rdf:Description>
+                <sp:object rdf:nodeID="b1"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+                <sp:subject rdf:nodeID="b2"/>
+              </rdf:Description>
+            </rdf:first>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first>
+                  <rdf:Description>
+                    <sp:object rdf:nodeID="b3"/>
+                    <sp:predicate rdf:nodeID="b4"/>
+                    <sp:subject rdf:nodeID="b2"/>
+                  </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first>
+                      <rdf:Description>
+                        <sp:object rdf:nodeID="b5"/>
+                        <sp:predicate rdf:nodeID="b6"/>
+                        <sp:subject rdf:nodeID="b2"/>
+                      </rdf:Description>
+                    </rdf:first>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <rdf:Description>
+                            <sp:object rdf:nodeID="b7"/>
+                            <sp:predicate rdf:nodeID="b8"/>
+                            <sp:subject rdf:nodeID="b2"/>
+                          </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+                  </rdf:Description>
+                </rdf:rest>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </sp:templates>
+        <sp:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PREFIX prv: &lt;http://purl.org/ontology/prv/core#&gt;&#xD;
+CONSTRUCT {&#xD;
+    ?r a ?rc .&#xD;
+    ?r ?scp ?sc .&#xD;
+    ?r ?sp ?s .&#xD;
+    ?r ?op ?o .&#xD;
+}&#xD;
+WHERE {&#xD;
+    ?s ?sc ?o .&#xD;
+    ?pr a prv:PropertyReification .&#xD;
+    ?pr prv:shortcut ?sc .&#xD;
+    ?pr prv:reification_class ?rc .&#xD;
+    ?pr prv:shortcut_property ?scp .&#xD;
+    ?pr prv:subject_property ?sp .&#xD;
+    ?pr prv:object_property ?op .&#xD;
+}</sp:text>
+        <sp:where>
+          <rdf:Description>
+            <rdf:first>
+              <rdf:Description>
+                <sp:object rdf:nodeID="b7"/>
+                <sp:predicate rdf:nodeID="b3"/>
+                <sp:subject rdf:nodeID="b5"/>
+              </rdf:Description>
+            </rdf:first>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first>
+                  <rdf:Description>
+                    <sp:object rdf:resource="http://purl.org/ontology/prv/core#PropertyReification"/>
+                    <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+                    <sp:subject rdf:nodeID="b9"/>
+                  </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first>
+                      <rdf:Description>
+                        <sp:object rdf:nodeID="b3"/>
+                        <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#shortcut"/>
+                        <sp:subject rdf:nodeID="b9"/>
+                      </rdf:Description>
+                    </rdf:first>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <rdf:Description>
+                            <sp:object rdf:nodeID="b1"/>
+                            <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#reification_class"/>
+                            <sp:subject rdf:nodeID="b9"/>
+                          </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                          <rdf:Description>
+                            <rdf:first>
+                              <rdf:Description>
+                                <sp:object rdf:nodeID="b4"/>
+                                <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#shortcut_property"/>
+                                <sp:subject rdf:nodeID="b9"/>
+                              </rdf:Description>
+                            </rdf:first>
+                            <rdf:rest>
+                              <rdf:Description>
+                                <rdf:first>
+                                  <rdf:Description>
+                                    <sp:object rdf:nodeID="b6"/>
+                                    <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#subject_property"/>
+                                    <sp:subject rdf:nodeID="b9"/>
+                                  </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <sp:object rdf:nodeID="b8"/>
+                                        <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#object_property"/>
+                                        <sp:subject rdf:nodeID="b9"/>
+                                      </rdf:Description>
+                                    </rdf:first>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </rdf:rest>
+                              </rdf:Description>
+                            </rdf:rest>
+                          </rdf:Description>
+                        </rdf:rest>
+                      </rdf:Description>
+                    </rdf:rest>
+                  </rdf:Description>
+                </rdf:rest>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </sp:where>
+      </sp:Construct>
+    </spin:body>
+    <rdfs:comment xml:lang="en">The property reification rule describes the mapping from a shortcut relation to an instance of a reification class.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/prv/rules#"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Property Reification Rule</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+  </spin:Template>
+  <spin:Template rdf:about="http://purl.org/ontology/prv/rules#ShortcutRelationRule">
+    <spin:body>
+      <sp:Construct>
+        <sp:templates>
+          <rdf:Description>
+            <rdf:first>
+              <rdf:Description>
+                <sp:object rdf:nodeID="b10"/>
+                <sp:predicate rdf:nodeID="b11"/>
+                <sp:subject rdf:nodeID="b12"/>
+              </rdf:Description>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:Description>
+        </sp:templates>
+        <sp:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PREFIX prv: &lt;http://purl.org/ontology/prv/core#&gt;&#xD;
+CONSTRUCT {&#xD;
+    ?s ?sc ?o .&#xD;
+}&#xD;
+WHERE {&#xD;
+    ?pr a prv:PropertyReification .&#xD;
+    ?pr prv:shortcut ?sc .&#xD;
+    ?pr prv:reification_class ?rc .&#xD;
+    ?pr prv:shortcut_property ?scp .&#xD;
+    ?pr prv:subject_property ?sp .&#xD;
+    ?pr prv:object_property ?op .&#xD;
+    ?r a ?rc .&#xD;
+    ?r ?scp ?sc .&#xD;
+    ?r ?sp ?s .&#xD;
+    ?r ?op ?o .&#xD;
+}</sp:text>
+        <sp:where>
+          <rdf:Description>
+            <rdf:first>
+              <rdf:Description>
+                <sp:object rdf:resource="http://purl.org/ontology/prv/core#PropertyReification"/>
+                <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+                <sp:subject rdf:nodeID="b13"/>
+              </rdf:Description>
+            </rdf:first>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first>
+                  <rdf:Description>
+                    <sp:object rdf:nodeID="b11"/>
+                    <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#shortcut"/>
+                    <sp:subject rdf:nodeID="b13"/>
+                  </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first>
+                      <rdf:Description>
+                        <sp:object rdf:nodeID="b14"/>
+                        <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#reification_class"/>
+                        <sp:subject rdf:nodeID="b13"/>
+                      </rdf:Description>
+                    </rdf:first>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <rdf:Description>
+                            <sp:object rdf:nodeID="b15"/>
+                            <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#shortcut_property"/>
+                            <sp:subject rdf:nodeID="b13"/>
+                          </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                          <rdf:Description>
+                            <rdf:first>
+                              <rdf:Description>
+                                <sp:object rdf:nodeID="b16"/>
+                                <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#subject_property"/>
+                                <sp:subject rdf:nodeID="b13"/>
+                              </rdf:Description>
+                            </rdf:first>
+                            <rdf:rest>
+                              <rdf:Description>
+                                <rdf:first>
+                                  <rdf:Description>
+                                    <sp:object rdf:nodeID="b17"/>
+                                    <sp:predicate rdf:resource="http://purl.org/ontology/prv/core#object_property"/>
+                                    <sp:subject rdf:nodeID="b13"/>
+                                  </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <sp:object rdf:nodeID="b14"/>
+                                        <sp:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+                                        <sp:subject rdf:nodeID="b18"/>
+                                      </rdf:Description>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <rdf:Description>
+                                        <rdf:first>
+                                          <rdf:Description>
+                                            <sp:object rdf:nodeID="b11"/>
+                                            <sp:predicate rdf:nodeID="b15"/>
+                                            <sp:subject rdf:nodeID="b18"/>
+                                          </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                          <rdf:Description>
+                                            <rdf:first>
+                                              <rdf:Description>
+                                                <sp:object rdf:nodeID="b12"/>
+                                                <sp:predicate rdf:nodeID="b16"/>
+                                                <sp:subject rdf:nodeID="b18"/>
+                                              </rdf:Description>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                              <rdf:Description>
+                                                <rdf:first>
+                                                  <rdf:Description>
+                                                    <sp:object rdf:nodeID="b10"/>
+                                                    <sp:predicate rdf:nodeID="b17"/>
+                                                    <sp:subject rdf:nodeID="b18"/>
+                                                  </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:Description>
+                                            </rdf:rest>
+                                          </rdf:Description>
+                                        </rdf:rest>
+                                      </rdf:Description>
+                                    </rdf:rest>
+                                  </rdf:Description>
+                                </rdf:rest>
+                              </rdf:Description>
+                            </rdf:rest>
+                          </rdf:Description>
+                        </rdf:rest>
+                      </rdf:Description>
+                    </rdf:rest>
+                  </rdf:Description>
+                </rdf:rest>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </sp:where>
+      </sp:Construct>
+    </spin:body>
+    <rdfs:comment xml:lang="en">The shortcut relation rule describes the mapping from an instance of a reification class to a shortcut relation</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/prv/rules#"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shortcut Relation Rule</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://spinrdf.org/spin#Templates"/>
+  </spin:Template>
+  <rdf:Description rdf:nodeID="b1">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rc</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b10">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">o</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b11">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sc</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b12">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b13">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pr</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b14">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rc</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b15">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scp</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b16">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sp</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b17">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">op</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b18">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">r</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b2">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">r</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b3">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sc</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b4">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">scp</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b5">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b6">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sp</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b7">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">o</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b8">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">op</sp:varName>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="b9">
+    <sp:varName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pr</sp:varName>
+  </rdf:Description>
+</rdf:RDF>
