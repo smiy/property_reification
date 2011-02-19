@@ -14,10 +14,11 @@
 @prefix status:  <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix vann:    <http://purl.org/vocab/vann/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
 
 prv:  rdf:type owl:Ontology ;
       dc:creator <http://foaf.me/zazi#me> , <http://mud.cz/foaf.rdf#ojirio> , <http://tobyinkster.co.uk/#i> , <http://richard.cyganiak.de/foaf.rdf#cygri> ;
-      dc:date "2010-09-26T12:15:53+01:00"^^xsd:dateTime ;
+      dc:date "2011-02-19T14:38:53+01:00"^^xsd:dateTime ;
       dc:description """A vocabulary for describing the ontology design pattern of property reification. That means the semantic relation of 
 a \"shortcut relation\" (subject, predicate, object) with its detailed description of the relationship."""@en ;
       dc:title "Property Reification Vocabulary"@en ;
@@ -26,7 +27,8 @@ a \"shortcut relation\" (subject, predicate, object) with its detailed descripti
       vann:preferredNamespaceUri
               "http://purl.org/ontology/prv/core#" ;
       owl:imports foaf: , <http://www.w3.org/2003/06/sw-vocab-status/ns> , dc: , vann: ;
-      owl:versionInfo 0.1 .
+      owl:versionInfo 0.11 ;
+      spin:imports <http://purl.org/ontology/prv/rules> .
 
 prv:PropertyReification
       rdf:type rdfs:Class ;
