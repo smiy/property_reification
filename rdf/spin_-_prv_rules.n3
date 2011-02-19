@@ -1,0 +1,202 @@
+# Saved by TopBraid on Sat Feb 19 15:34:47 CET 2011
+# baseURI: http://purl.org/ontology/prv/rules#
+# imports: http://spinrdf.org/sp
+# imports: http://purl.org/vocab/vann/
+# imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.w3.org/2003/06/sw-vocab-status/ns
+# imports: http://purl.org/ontology/prv/core
+# imports: http://spinrdf.org/spin
+
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prv:     <http://purl.org/ontology/prv/core#> .
+@prefix prvr:    <http://purl.org/ontology/prv/rules#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sp:      <http://spinrdf.org/sp#> .
+@prefix spin:    <http://spinrdf.org/spin#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+prvr:
+      rdf:type owl:Ontology , spin:LibraryOntology ;
+      rdfs:seeAlso prv: ;
+      dc:creator <http://foaf.me/zazi#me> ;
+      dc:date "2011-02-19T14:19:53+01:00"^^xsd:dateTime ;
+      dc:description """This is the rule library for the Property Reification Vocabulary. It includes two rules.
+The first one, the property reification rule, describes the mapping from a shortcut relation to an instance of a reification class.
+The secone one, the shortcut relation rule, describes the mapping from an instance of a reification class to a shortcut relation."""@en ;
+      dc:title "Property Reification Vocabulary Rules"^^xsd:string ;
+      vann:preferredNamespacePrefix
+              "prvr" ;
+      vann:preferredNamespaceUri
+              "http://purl.org/ontology/prv/rules#" ;
+      owl:imports vann: , <http://purl.org/ontology/prv/core> , <http://spinrdf.org/sp> , <http://spinrdf.org/spin> , dc: , <http://www.w3.org/2003/06/sw-vocab-status/ns> ;
+      owl:versionInfo 0.1 .
+
+prvr:PropertyReificationRule
+      rdf:type spin:Template ;
+      rdfs:comment "The property reification rule describes the mapping from a shortcut relation to an instance of a reification class."@en ;
+      rdfs:isDefinedBy prvr: ;
+      rdfs:label "Property Reification Rule"^^xsd:string ;
+      rdfs:subClassOf spin:Templates ;
+      spin:body
+              [ rdf:type sp:Construct ;
+                sp:templates ([ sp:object _:b1 ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b2
+                          ] [ sp:object _:b3 ;
+                            sp:predicate _:b4 ;
+                            sp:subject _:b2
+                          ] [ sp:object _:b5 ;
+                            sp:predicate _:b6 ;
+                            sp:subject _:b2
+                          ] [ sp:object _:b7 ;
+                            sp:predicate _:b8 ;
+                            sp:subject _:b2
+                          ]) ;
+                sp:text """PREFIX prv: <http://purl.org/ontology/prv/core#>
+CONSTRUCT {
+    ?r a ?rc .
+    ?r ?scp ?sc .
+    ?r ?sp ?s .
+    ?r ?op ?o .
+}
+WHERE {
+    ?s ?sc ?o .
+    ?pr a prv:PropertyReification .
+    ?pr prv:shortcut ?sc .
+    ?pr prv:reification_class ?rc .
+    ?pr prv:shortcut_property ?scp .
+    ?pr prv:subject_property ?sp .
+    ?pr prv:object_property ?op .
+}"""^^xsd:string ;
+                sp:where ([ sp:object _:b7 ;
+                            sp:predicate _:b3 ;
+                            sp:subject _:b5
+                          ] [ sp:object prv:PropertyReification ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b3 ;
+                            sp:predicate prv:shortcut ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b1 ;
+                            sp:predicate prv:reification_class ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b4 ;
+                            sp:predicate prv:shortcut_property ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b6 ;
+                            sp:predicate prv:subject_property ;
+                            sp:subject _:b9
+                          ] [ sp:object _:b8 ;
+                            sp:predicate prv:object_property ;
+                            sp:subject _:b9
+                          ])
+              ] .
+
+prvr:ShortcutRelationRule
+      rdf:type spin:Template ;
+      rdfs:comment "The shortcut relation rule describes the mapping from an instance of a reification class to a shortcut relation"@en ;
+      rdfs:isDefinedBy prvr: ;
+      rdfs:label "Shortcut Relation Rule"^^xsd:string ;
+      rdfs:subClassOf spin:Templates ;
+      spin:body
+              [ rdf:type sp:Construct ;
+                sp:templates ([ sp:object _:b10 ;
+                            sp:predicate _:b11 ;
+                            sp:subject _:b12
+                          ]) ;
+                sp:text """PREFIX prv: <http://purl.org/ontology/prv/core#>
+CONSTRUCT {
+    ?s ?sc ?o .
+}
+WHERE {
+    ?pr a prv:PropertyReification .
+    ?pr prv:shortcut ?sc .
+    ?pr prv:reification_class ?rc .
+    ?pr prv:shortcut_property ?scp .
+    ?pr prv:subject_property ?sp .
+    ?pr prv:object_property ?op .
+    ?r a ?rc .
+    ?r ?scp ?sc .
+    ?r ?sp ?s .
+    ?r ?op ?o .
+}"""^^xsd:string ;
+                sp:where ([ sp:object prv:PropertyReification ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b13
+                          ] [ sp:object _:b11 ;
+                            sp:predicate prv:shortcut ;
+                            sp:subject _:b13
+                          ] [ sp:object _:b14 ;
+                            sp:predicate prv:reification_class ;
+                            sp:subject _:b13
+                          ] [ sp:object _:b15 ;
+                            sp:predicate prv:shortcut_property ;
+                            sp:subject _:b13
+                          ] [ sp:object _:b16 ;
+                            sp:predicate prv:subject_property ;
+                            sp:subject _:b13
+                          ] [ sp:object _:b17 ;
+                            sp:predicate prv:object_property ;
+                            sp:subject _:b13
+                          ] [ sp:object _:b14 ;
+                            sp:predicate rdf:type ;
+                            sp:subject _:b18
+                          ] [ sp:object _:b11 ;
+                            sp:predicate _:b15 ;
+                            sp:subject _:b18
+                          ] [ sp:object _:b12 ;
+                            sp:predicate _:b16 ;
+                            sp:subject _:b18
+                          ] [ sp:object _:b10 ;
+                            sp:predicate _:b17 ;
+                            sp:subject _:b18
+                          ])
+              ] .
+
+_:b18
+      sp:varName "r"^^xsd:string .
+
+_:b17
+      sp:varName "op"^^xsd:string .
+
+_:b16
+      sp:varName "sp"^^xsd:string .
+
+_:b15
+      sp:varName "scp"^^xsd:string .
+
+_:b14
+      sp:varName "rc"^^xsd:string .
+
+_:b13
+      sp:varName "pr"^^xsd:string .
+
+_:b12
+      sp:varName "s"^^xsd:string .
+
+_:b11
+      sp:varName "sc"^^xsd:string .
+
+_:b10
+      sp:varName "o"^^xsd:string .
+
+_:b8  sp:varName "op"^^xsd:string .
+
+_:b6  sp:varName "sp"^^xsd:string .
+
+_:b3  sp:varName "sc"^^xsd:string .
+
+_:b1  sp:varName "rc"^^xsd:string .
+
+_:b4  sp:varName "scp"^^xsd:string .
+
+_:b9  sp:varName "pr"^^xsd:string .
+
+_:b2  sp:varName "r"^^xsd:string .
+
+_:b7  sp:varName "o"^^xsd:string .
+
+_:b5  sp:varName "s"^^xsd:string .
