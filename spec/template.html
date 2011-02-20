@@ -32,19 +32,24 @@ version="XHTML+RDFa 1.0">
 </head>
 
 <body>
-  <h1><span about="http://purl.org/ontology/prv/core#" property="dc:title">The Property Reification Vocabulary</span> <span about="http://purl.org/ontology/prv/core#" property="owl:versionInfo" datatype="xsd:decimal">0.1</span></h1>
+  <h1><span about="http://purl.org/ontology/prv/core#" property="dc:title">The Property Reification Vocabulary</span> <span about="http://purl.org/ontology/prv/core#" property="owl:versionInfo" datatype="xsd:decimal">0.11</span></h1>
 
-  <h2>Namespace Document <span about="http://purl.org/ontology/prv/core#" property="dc:date" content="2010-09-26T12:15:53+01:00" datatype="xsd:dateTime">26 September 2010</span></h2>
+  <h2>Namespace Document <span about="http://purl.org/ontology/prv/core#" property="dc:date" content="2011-02-19T14:38:53+01:00" datatype="xsd:dateTime">19 February 2011</span></h2>
 <table class="header" border="0">
   <tr>
     <td>
   		<dl about="http://purl.org/ontology/prv/propertyreification.html">
     		<dt>This version:</dt>
     		<dd><a rel="dc:hasVersion" 
-			rev="dc:isVersionOf" href="http://purl.org/ontology/prv/20100926/propertyreification.html">http://purl.org/ontology/prv/20100926/propertyreification.html</a> (<a href="http://purl.org/ontology/prv/20100926/propertyreification.owl">OWL</a>, <a href="http://purl.org/ontology/prv/20100926/propertyreification.n3">N3</a>)</dd>
+			rev="dc:isVersionOf" href="http://purl.org/ontology/prv/20110219/propertyreification.html">http://purl.org/ontology/prv/20110219/propertyreification.html</a> (<a href="http://purl.org/ontology/prv/20110219/propertyreification.owl">OWL</a>, <a href="http://purl.org/ontology/prv/20110219/propertyreification.n3">N3</a>)</dd>
 
     		<dt>Latest version:</dt>
     		<dd><a href="http://purl.org/ontology/prv/core#">http://purl.org/ontology/prv/core#</a> (<a href="http://purl.org/ontology/prv/propertyreification.owl">OWL</a>, <a href="http://purl.org/ontology/prv/propertyreification.n3">N3</a>)</dd>
+
+			<dt>Previous version:</dt>
+    		<dd><a rel="dc:hasVersion" 
+			rev="dc:isVersionOf" href="http://purl.org/ontology/prv/20100926/propertyreification.html">http://purl.org/ontology/prv/20100926/propertyreification.html</a> (<a href="http://purl.org/ontology/prv/20100926/propertyreification.owl">OWL</a>, <a href="http://purl.org/ontology/prv/20100926/propertyreification.n3">N3</a>)</dd>
+
 
     		<dt>Authors:</dt>
     		<dd><a rel="rdfs:seeAlso" href="http://mud.cz/">Jiří Procházka</a>,<br/>
@@ -53,10 +58,10 @@ version="XHTML+RDFa 1.0">
     			<a rel="rdfs:seeAlso" href="http://smiy.wordpress.com/author/zazi0815/">Bob Ferris</a> (<a rel="rdfs:seeAlso" href="http://smiy.wordpress.com/">SMI</a>)</dd>
     	</dl>
 
-  			<p class="copyright"><span about="http://purl.org/ontology/prv/core#" property="dc:rights">Copyright &#169; 2010 Jiří Procházka, Richard Cyganiak, Toby Inkster and Bob Ferris</span></p>
+  			<p class="copyright"><span about="http://purl.org/ontology/prv/core#" property="dc:rights">Copyright &#169; 2010 - 2011 Jiří Procházka, Richard Cyganiak, Toby Inkster and Bob Ferris</span></p>
 	</td>
     <td align="right">
-		<table class="infobox">
+		<table class="infobox" about="http://purl.org/ontology/prv/propertyreification.html">
 			<tr>
 				<td rowspan="2">
 					<img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
@@ -67,7 +72,20 @@ version="XHTML+RDFa 1.0">
 			</tr>
 			<tr>
 				<td align="center">
-					<a about="http://purl.org/ontology/prv/propertyreification.html" rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/property_reification/">Source code, examples, graphics, ...</a>
+					<a rel="rdfs:seeAlso" href="http://smiy.svn.sourceforge.net/viewvc/smiy/property_reification/">Source code, examples, graphics, ...</a>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2">
+					<img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
+				</td>
+				<td align="center">
+					<b>SMI ontologies mailing list</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a rel="rdfs:seeAlso" href="http://sourceforge.net/mailarchive/forum.php?forum_name=smiy-ontologies">Browse Archives</a>
 				</td>
 			</tr>
 			<tr>
@@ -81,6 +99,19 @@ version="XHTML+RDFa 1.0">
 			<tr>
 				<td align="center">
 					<a href="http://smiy.wordpress.com/">Announcements, descriptions, use cases, ...</a>
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2" class="infobox_whitespace">
+					&nbsp;
+				</td>
+				<td align="center">
+					<b>SMI Webspace Index</b>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<a rel="rdfs:seeAlso" href="http://purl.org/smiy/">Ontologies, vocabularies, tools, applications, ...</a>
 				</td>
 			</tr>
 		</table>
@@ -411,9 +442,14 @@ includes</p>
     <li>the <strong>shortcut relation</strong> <em>subject</em> <strong>?s</strong> (associated by the defined <em>subject property</em> <strong>?sp</strong>) and</li>
     <li>the <strong>shortcut relation</strong> <em>object</em> <strong>?o</strong> (associated by the defined  <em>object property</em> <strong>?op</strong>).</li>
 </ul>
-<p>With help of the <em>property reification</em> and <em>shortcut relation</em> rule a reasoning engine should not only
+<p about="http://purl.org/ontology/prv/propertyreification.html">With help of the <em>property reification</em> and <em>shortcut relation</em> rule a reasoning engine should not only
 be able to infer (construct) related representations, but also to reason that existing <em>shortcut relations</em>
-and instances of <em>reification classes</em> belonging semantically together.</p>
+and instances of <em>reification classes</em> belonging semantically together.<br/>
+Both rules are also described with help of <a rel="rdfs:seeAlso" href="http://spinrdf.org/">SPIN</a> (SPARQL Inferencing Notation) and 
+are available via the namespace URI '<code about="http://purl.org/ontology/prv/rules#" property="vann:preferredNamespaceUri" 
+datatype="xsd:anyURI">http://purl.org/ontology/prv/rules#</code>'. Thus, one can directly retrieve a description of the <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/prv/rules#PropertyReificationRule"><em>property reification</em> rule</a> and the <a rel="rdfs:seeAlso" 
+href="http://purl.org/ontology/prv/rules#ShortcutRelationRule"><em>shortcut relation</em> rule</a> and use these descriptions to feed a reasoning engine.</p>
 
   <h2 id="sec-bg">Background</h2>
 
@@ -534,6 +570,15 @@ Libby Miller and Yves Raimond to provide the basis for this specification.</p>
 <h2 id="sec-changes">Recent Changes</h2>
 
 <pre>============================
+Version 0.11 (February 2011)
+============================ 
+ * ADDED: PRV rules description in SPIN
+ * ADDED: prv:reified - to relate an statement identifier of a shortcut relation with an instance of a reification class. Although, this 
+          is at the moment not really applicable, because it requires a notation for statement identifier as optional fourth element of a 
+          tuple; that means, triple + statement identifier
+ * IMPORTED: PRV rules library with spin:imports to the vocabulary specification
+ 
+============================
 Version 0.1 (September 2010)
 ============================
  * ADDED: prv:PropertyReification - the class, which describes the relations of a property reification. That means, its "shortcut 

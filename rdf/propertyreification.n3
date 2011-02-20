@@ -66,7 +66,7 @@ prv:reified
       rdfs:isDefinedBy prv: ;
       rdfs:label "reified"@en ;
       rdfs:range owl:Thing ;
-      status:term_status "experimental"@en .
+      status:term_status "testing"@en .
 
 prv:shortcut
       rdf:type rdf:Property ;

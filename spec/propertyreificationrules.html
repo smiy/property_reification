@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:prv="http://purl.org/ontology/prv/core#"
+xmlns:vann="http://purl.org/vocab/vann/"
+xmlns:bibo="http://purl.org/ontology/bibo/"
+xmlns:foaf="http://xmlns.com/foaf/0.1/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+typeof="bibo:Document"
+about="http://purl.org/ontology/prv/propertyreificationrules.html"
+version="XHTML+RDFa 1.0">
+<head>
+  <title about="http://purl.org/ontology/prv/propertyreificationrules.html" property="dc:title">The Property Reification Vocabulary Rules Specification</title>
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+  <base href="http://purl.org/ontology/prv/propertyreificationrules.html" />
+  <link href="http://smiy.sourceforge.net/css/xmlns-style.css" rel="stylesheet"  type="text/css" />
+  <link about="http://purl.org/ontology/prv/propertyreificationrules.html" rel="dc:creator" href="http://foaf.me/zazi#me" />
+  <link about="http://purl.org/ontology/prv/propertyreificationrules.html" rel="foaf:primaryTopic" rev="foaf:isPrimaryTopicOf" href="http://purl.org/ontology/prv/rules#" />
+  <link href="http://smiy.sourceforge.net/css/style.css" rel="stylesheet"  type="text/css" />
+  <link about="http://purl.org/ontology/prv/propertyreificationrules.html" href="http://purl.org/ontology/prv/propertyreificationrules.owl" rel="alternate dcterms:hasFormat"  type="application/rdf+xml" />
+  <link about="http://purl.org/ontology/prv/propertyreificationrules.html" href="http://purl.org/ontology/prv/propertyreificationrules.n3" rel="alternate dcterms:hasFormat"  type="application/rdf+n3" />
+</head>
+
+<body>
+<div xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:ns0="http://purl.org/vocab/vann/"
+  xmlns:ns1="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:ns2="http://www.w3.org/2002/07/owl#"
+  xmlns:ns3="http://spinrdf.org/spin#"
+  xmlns:ns4="http://spinrdf.org/sp#">
+
+<div><h2>Property Reification Vocabulary Rules</h2>
+
+  <dl about="http://purl.org/ontology/prv/rules#">
+    <dt>type</dt><dd><a rel="rdf:type" href="http://www.w3.org/2002/07/owl#Ontology">http://www.w3.org/2002/07/owl#Ontology</a></dd><dd><a rel="rdf:type" href="http://spinrdf.org/spin#LibraryOntology">http://spinrdf.org/spin#LibraryOntology</a></dd>
+    <dt>creator</dt><dd><a rel="dc:creator" href="http://foaf.me/zazi#me">http://foaf.me/zazi#me</a></dd>
+    <dt>date</dt><dd property="dc:date" datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-02-19T14:19:53+01:00</dd>
+    <dt>description</dt><dd property="dc:description" xml:lang="en">This is the rule library for the Property Reification Vocabulary. It includes two rules.
+The first one, the property reification rule, describes the mapping from a shortcut relation to an instance of a reification class.
+The secone one, the shortcut relation rule, describes the mapping from an instance of a reification class to a shortcut relation.</dd>
+    <dt>title</dt><dd property="dc:title" datatype="http://www.w3.org/2001/XMLSchema#string">Property Reification Vocabulary Rules</dd>
+    <dt>preferredNamespacePrefix</dt><dd property="ns0:preferredNamespacePrefix">prvr</dd>
+    <dt>preferredNamespaceUri</dt><dd property="ns0:preferredNamespaceUri">http://purl.org/ontology/prv/rules#</dd>
+    <dt>seeAlso</dt><dd><a rel="ns1:seeAlso" href="http://purl.org/ontology/prv/core#">http://purl.org/ontology/prv/core#</a></dd>
+    <dt>imports</dt><dd><a rel="ns2:imports" href="http://purl.org/dc/elements/1.1/">http://purl.org/dc/elements/1.1/</a></dd><dd><a rel="ns2:imports" href="http://purl.org/ontology/prv/core">http://purl.org/ontology/prv/core</a></dd><dd><a rel="ns2:imports" href="http://purl.org/vocab/vann/">http://purl.org/vocab/vann/</a></dd><dd><a rel="ns2:imports" href="http://spinrdf.org/sp">http://spinrdf.org/sp</a></dd><dd><a rel="ns2:imports" href="http://spinrdf.org/spin">http://spinrdf.org/spin</a></dd><dd><a rel="ns2:imports" href="http://www.w3.org/2003/06/sw-vocab-status/ns">http://www.w3.org/2003/06/sw-vocab-status/ns</a></dd>
+    <dt>versionInfo</dt><dd property="ns2:versionInfo" datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</dd>
+  </dl></div><div><h2>Property Reification Rule</h2>
+
+  <dl about="http://purl.org/ontology/prv/rules#PropertyReificationRule">
+    <dt>type</dt><dd><a rel="rdf:type" href="http://spinrdf.org/spin#Template">http://spinrdf.org/spin#Template</a></dd>
+    <dt>body</dt><dd><span rel="ns3:body" resource="[_:arc2f54b1]">_:arc2f54b1</span></dd>
+    <dt>comment</dt><dd property="ns1:comment" xml:lang="en">The property reification rule describes the mapping from a shortcut relation to an instance of a reification class.</dd>
+    <dt>isDefinedBy</dt><dd><a rel="ns1:isDefinedBy" href="http://purl.org/ontology/prv/rules#">http://purl.org/ontology/prv/rules#</a></dd>
+    <dt>label</dt><dd property="ns1:label" datatype="http://www.w3.org/2001/XMLSchema#string">Property Reification Rule</dd>
+    <dt>subClassOf</dt><dd><a rel="ns1:subClassOf" href="http://spinrdf.org/spin#Templates">http://spinrdf.org/spin#Templates</a></dd>
+  </dl></div><div><h2>_:arc2f54b1</h2>
+
+  <dl about="[_:arc2f54b1]">
+    <dt>type</dt><dd><a rel="rdf:type" href="http://spinrdf.org/sp#Construct">http://spinrdf.org/sp#Construct</a></dd>
+    <dt>templates</dt><dd><span rel="ns4:templates" resource="[_:arc2f54b2]">_:arc2f54b2</span></dd>
+    <dt>text</dt><dd property="ns4:text" datatype="http://www.w3.org/2001/XMLSchema#string">PREFIX prv: &lt;http://purl.org/ontology/prv/core#&gt;
+CONSTRUCT {
+    ?r a ?rc .
+    ?r ?scp ?sc .
+    ?r ?sp ?s .
+    ?r ?op ?o .
+}
+WHERE {
+    ?s ?sc ?o .
+    ?pr a prv:PropertyReification .
+    ?pr prv:shortcut ?sc .
+    ?pr prv:reification_class ?rc .
+    ?pr prv:shortcut_property ?scp .
+    ?pr prv:subject_property ?sp .
+    ?pr prv:object_property ?op .
+}</dd>
+    <dt>where</dt><dd><span rel="ns4:where" resource="[_:arc2f54b10]">_:arc2f54b10</span></dd>
+  </dl></div><div><h2>_:arc2f54b2</h2>
+
+  <dl about="[_:arc2f54b2]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b3]">_:arc2f54b3</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b4]">_:arc2f54b4</span></dd>
+  </dl></div><div><h2>_:arc2f54b3</h2>
+
+  <dl about="[_:arc2f54b3]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b1]">_:b1</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b2]">_:b2</span></dd>
+  </dl></div><div><h2>_:arc2f54b4</h2>
+
+  <dl about="[_:arc2f54b4]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b5]">_:arc2f54b5</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b6]">_:arc2f54b6</span></dd>
+  </dl></div><div><h2>_:arc2f54b5</h2>
+
+  <dl about="[_:arc2f54b5]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b3]">_:b3</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b4]">_:b4</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b2]">_:b2</span></dd>
+  </dl></div><div><h2>_:arc2f54b6</h2>
+
+  <dl about="[_:arc2f54b6]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b7]">_:arc2f54b7</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b8]">_:arc2f54b8</span></dd>
+  </dl></div><div><h2>_:arc2f54b7</h2>
+
+  <dl about="[_:arc2f54b7]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b5]">_:b5</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b6]">_:b6</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b2]">_:b2</span></dd>
+  </dl></div><div><h2>_:arc2f54b8</h2>
+
+  <dl about="[_:arc2f54b8]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b9]">_:arc2f54b9</span></dd>
+    <dt>rest</dt><dd><a rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">http://www.w3.org/1999/02/22-rdf-syntax-ns#nil</a></dd>
+  </dl></div><div><h2>_:arc2f54b9</h2>
+
+  <dl about="[_:arc2f54b9]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b7]">_:b7</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b8]">_:b8</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b2]">_:b2</span></dd>
+  </dl></div><div><h2>_:arc2f54b10</h2>
+
+  <dl about="[_:arc2f54b10]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b11]">_:arc2f54b11</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b12]">_:arc2f54b12</span></dd>
+  </dl></div><div><h2>_:arc2f54b11</h2>
+
+  <dl about="[_:arc2f54b11]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b7]">_:b7</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b3]">_:b3</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b5]">_:b5</span></dd>
+  </dl></div><div><h2>_:arc2f54b12</h2>
+
+  <dl about="[_:arc2f54b12]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b13]">_:arc2f54b13</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b14]">_:arc2f54b14</span></dd>
+  </dl></div><div><h2>_:arc2f54b13</h2>
+
+  <dl about="[_:arc2f54b13]">
+    <dt>object</dt><dd><a rel="ns4:object" href="http://purl.org/ontology/prv/core#PropertyReification">http://purl.org/ontology/prv/core#PropertyReification</a></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b9]">_:b9</span></dd>
+  </dl></div><div><h2>_:arc2f54b14</h2>
+
+  <dl about="[_:arc2f54b14]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b15]">_:arc2f54b15</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b16]">_:arc2f54b16</span></dd>
+  </dl></div><div><h2>_:arc2f54b15</h2>
+
+  <dl about="[_:arc2f54b15]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b3]">_:b3</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#shortcut">http://purl.org/ontology/prv/core#shortcut</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b9]">_:b9</span></dd>
+  </dl></div><div><h2>_:arc2f54b16</h2>
+
+  <dl about="[_:arc2f54b16]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b17]">_:arc2f54b17</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b18]">_:arc2f54b18</span></dd>
+  </dl></div><div><h2>_:arc2f54b17</h2>
+
+  <dl about="[_:arc2f54b17]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b1]">_:b1</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#reification_class">http://purl.org/ontology/prv/core#reification_class</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b9]">_:b9</span></dd>
+  </dl></div><div><h2>_:arc2f54b18</h2>
+
+  <dl about="[_:arc2f54b18]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b19]">_:arc2f54b19</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b20]">_:arc2f54b20</span></dd>
+  </dl></div><div><h2>_:arc2f54b19</h2>
+
+  <dl about="[_:arc2f54b19]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b4]">_:b4</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#shortcut_property">http://purl.org/ontology/prv/core#shortcut_property</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b9]">_:b9</span></dd>
+  </dl></div><div><h2>_:arc2f54b20</h2>
+
+  <dl about="[_:arc2f54b20]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b21]">_:arc2f54b21</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b22]">_:arc2f54b22</span></dd>
+  </dl></div><div><h2>_:arc2f54b21</h2>
+
+  <dl about="[_:arc2f54b21]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b6]">_:b6</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#subject_property">http://purl.org/ontology/prv/core#subject_property</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b9]">_:b9</span></dd>
+  </dl></div><div><h2>_:arc2f54b22</h2>
+
+  <dl about="[_:arc2f54b22]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b23]">_:arc2f54b23</span></dd>
+    <dt>rest</dt><dd><a rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">http://www.w3.org/1999/02/22-rdf-syntax-ns#nil</a></dd>
+  </dl></div><div><h2>_:arc2f54b23</h2>
+
+  <dl about="[_:arc2f54b23]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b8]">_:b8</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#object_property">http://purl.org/ontology/prv/core#object_property</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b9]">_:b9</span></dd>
+  </dl></div><div><h2>Shortcut Relation Rule</h2>
+
+  <dl about="http://purl.org/ontology/prv/rules#ShortcutRelationRule">
+    <dt>type</dt><dd><a rel="rdf:type" href="http://spinrdf.org/spin#Template">http://spinrdf.org/spin#Template</a></dd>
+    <dt>body</dt><dd><span rel="ns3:body" resource="[_:arc2f54b24]">_:arc2f54b24</span></dd>
+    <dt>comment</dt><dd property="ns1:comment" xml:lang="en">The shortcut relation rule describes the mapping from an instance of a reification class to a shortcut relation</dd>
+    <dt>isDefinedBy</dt><dd><a rel="ns1:isDefinedBy" href="http://purl.org/ontology/prv/rules#">http://purl.org/ontology/prv/rules#</a></dd>
+    <dt>label</dt><dd property="ns1:label" datatype="http://www.w3.org/2001/XMLSchema#string">Shortcut Relation Rule</dd>
+    <dt>subClassOf</dt><dd><a rel="ns1:subClassOf" href="http://spinrdf.org/spin#Templates">http://spinrdf.org/spin#Templates</a></dd>
+  </dl></div><div><h2>_:arc2f54b24</h2>
+
+  <dl about="[_:arc2f54b24]">
+    <dt>type</dt><dd><a rel="rdf:type" href="http://spinrdf.org/sp#Construct">http://spinrdf.org/sp#Construct</a></dd>
+    <dt>templates</dt><dd><span rel="ns4:templates" resource="[_:arc2f54b25]">_:arc2f54b25</span></dd>
+    <dt>text</dt><dd property="ns4:text" datatype="http://www.w3.org/2001/XMLSchema#string">PREFIX prv: &lt;http://purl.org/ontology/prv/core#&gt;
+CONSTRUCT {
+    ?s ?sc ?o .
+}
+WHERE {
+    ?pr a prv:PropertyReification .
+    ?pr prv:shortcut ?sc .
+    ?pr prv:reification_class ?rc .
+    ?pr prv:shortcut_property ?scp .
+    ?pr prv:subject_property ?sp .
+    ?pr prv:object_property ?op .
+    ?r a ?rc .
+    ?r ?scp ?sc .
+    ?r ?sp ?s .
+    ?r ?op ?o .
+}</dd>
+    <dt>where</dt><dd><span rel="ns4:where" resource="[_:arc2f54b27]">_:arc2f54b27</span></dd>
+  </dl></div><div><h2>_:arc2f54b25</h2>
+
+  <dl about="[_:arc2f54b25]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b26]">_:arc2f54b26</span></dd>
+    <dt>rest</dt><dd><a rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">http://www.w3.org/1999/02/22-rdf-syntax-ns#nil</a></dd>
+  </dl></div><div><h2>_:arc2f54b26</h2>
+
+  <dl about="[_:arc2f54b26]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b10]">_:b10</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b11]">_:b11</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b12]">_:b12</span></dd>
+  </dl></div><div><h2>_:arc2f54b27</h2>
+
+  <dl about="[_:arc2f54b27]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b28]">_:arc2f54b28</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b29]">_:arc2f54b29</span></dd>
+  </dl></div><div><h2>_:arc2f54b28</h2>
+
+  <dl about="[_:arc2f54b28]">
+    <dt>object</dt><dd><a rel="ns4:object" href="http://purl.org/ontology/prv/core#PropertyReification">http://purl.org/ontology/prv/core#PropertyReification</a></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b13]">_:b13</span></dd>
+  </dl></div><div><h2>_:arc2f54b29</h2>
+
+  <dl about="[_:arc2f54b29]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b30]">_:arc2f54b30</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b31]">_:arc2f54b31</span></dd>
+  </dl></div><div><h2>_:arc2f54b30</h2>
+
+  <dl about="[_:arc2f54b30]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b11]">_:b11</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#shortcut">http://purl.org/ontology/prv/core#shortcut</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b13]">_:b13</span></dd>
+  </dl></div><div><h2>_:arc2f54b31</h2>
+
+  <dl about="[_:arc2f54b31]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b32]">_:arc2f54b32</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b33]">_:arc2f54b33</span></dd>
+  </dl></div><div><h2>_:arc2f54b32</h2>
+
+  <dl about="[_:arc2f54b32]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b14]">_:b14</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#reification_class">http://purl.org/ontology/prv/core#reification_class</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b13]">_:b13</span></dd>
+  </dl></div><div><h2>_:arc2f54b33</h2>
+
+  <dl about="[_:arc2f54b33]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b34]">_:arc2f54b34</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b35]">_:arc2f54b35</span></dd>
+  </dl></div><div><h2>_:arc2f54b34</h2>
+
+  <dl about="[_:arc2f54b34]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b15]">_:b15</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#shortcut_property">http://purl.org/ontology/prv/core#shortcut_property</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b13]">_:b13</span></dd>
+  </dl></div><div><h2>_:arc2f54b35</h2>
+
+  <dl about="[_:arc2f54b35]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b36]">_:arc2f54b36</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b37]">_:arc2f54b37</span></dd>
+  </dl></div><div><h2>_:arc2f54b36</h2>
+
+  <dl about="[_:arc2f54b36]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b16]">_:b16</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#subject_property">http://purl.org/ontology/prv/core#subject_property</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b13]">_:b13</span></dd>
+  </dl></div><div><h2>_:arc2f54b37</h2>
+
+  <dl about="[_:arc2f54b37]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b38]">_:arc2f54b38</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b39]">_:arc2f54b39</span></dd>
+  </dl></div><div><h2>_:arc2f54b38</h2>
+
+  <dl about="[_:arc2f54b38]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b17]">_:b17</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://purl.org/ontology/prv/core#object_property">http://purl.org/ontology/prv/core#object_property</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b13]">_:b13</span></dd>
+  </dl></div><div><h2>_:arc2f54b39</h2>
+
+  <dl about="[_:arc2f54b39]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b40]">_:arc2f54b40</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b41]">_:arc2f54b41</span></dd>
+  </dl></div><div><h2>_:arc2f54b40</h2>
+
+  <dl about="[_:arc2f54b40]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b14]">_:b14</span></dd>
+    <dt>predicate</dt><dd><a rel="ns4:predicate" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">http://www.w3.org/1999/02/22-rdf-syntax-ns#type</a></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b18]">_:b18</span></dd>
+  </dl></div><div><h2>_:arc2f54b41</h2>
+
+  <dl about="[_:arc2f54b41]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b42]">_:arc2f54b42</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b43]">_:arc2f54b43</span></dd>
+  </dl></div><div><h2>_:arc2f54b42</h2>
+
+  <dl about="[_:arc2f54b42]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b11]">_:b11</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b15]">_:b15</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b18]">_:b18</span></dd>
+  </dl></div><div><h2>_:arc2f54b43</h2>
+
+  <dl about="[_:arc2f54b43]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b44]">_:arc2f54b44</span></dd>
+    <dt>rest</dt><dd><span rel="rdf:rest" resource="[_:arc2f54b45]">_:arc2f54b45</span></dd>
+  </dl></div><div><h2>_:arc2f54b44</h2>
+
+  <dl about="[_:arc2f54b44]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b12]">_:b12</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b16]">_:b16</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b18]">_:b18</span></dd>
+  </dl></div><div><h2>_:arc2f54b45</h2>
+
+  <dl about="[_:arc2f54b45]">
+    <dt>first</dt><dd><span rel="rdf:first" resource="[_:arc2f54b46]">_:arc2f54b46</span></dd>
+    <dt>rest</dt><dd><a rel="rdf:rest" href="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil">http://www.w3.org/1999/02/22-rdf-syntax-ns#nil</a></dd>
+  </dl></div><div><h2>_:arc2f54b46</h2>
+
+  <dl about="[_:arc2f54b46]">
+    <dt>object</dt><dd><span rel="ns4:object" resource="[_:b10]">_:b10</span></dd>
+    <dt>predicate</dt><dd><span rel="ns4:predicate" resource="[_:b17]">_:b17</span></dd>
+    <dt>subject</dt><dd><span rel="ns4:subject" resource="[_:b18]">_:b18</span></dd>
+  </dl></div><div><h2>_:b1</h2>
+
+  <dl about="[_:b1]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">rc</dd>
+  </dl></div><div><h2>_:b10</h2>
+
+  <dl about="[_:b10]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">o</dd>
+  </dl></div><div><h2>_:b11</h2>
+
+  <dl about="[_:b11]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">sc</dd>
+  </dl></div><div><h2>_:b12</h2>
+
+  <dl about="[_:b12]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">s</dd>
+  </dl></div><div><h2>_:b13</h2>
+
+  <dl about="[_:b13]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">pr</dd>
+  </dl></div><div><h2>_:b14</h2>
+
+  <dl about="[_:b14]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">rc</dd>
+  </dl></div><div><h2>_:b15</h2>
+
+  <dl about="[_:b15]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">scp</dd>
+  </dl></div><div><h2>_:b16</h2>
+
+  <dl about="[_:b16]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">sp</dd>
+  </dl></div><div><h2>_:b17</h2>
+
+  <dl about="[_:b17]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">op</dd>
+  </dl></div><div><h2>_:b18</h2>
+
+  <dl about="[_:b18]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">r</dd>
+  </dl></div><div><h2>_:b2</h2>
+
+  <dl about="[_:b2]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">r</dd>
+  </dl></div><div><h2>_:b3</h2>
+
+  <dl about="[_:b3]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">sc</dd>
+  </dl></div><div><h2>_:b4</h2>
+
+  <dl about="[_:b4]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">scp</dd>
+  </dl></div><div><h2>_:b5</h2>
+
+  <dl about="[_:b5]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">s</dd>
+  </dl></div><div><h2>_:b6</h2>
+
+  <dl about="[_:b6]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">sp</dd>
+  </dl></div><div><h2>_:b7</h2>
+
+  <dl about="[_:b7]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">o</dd>
+  </dl></div><div><h2>_:b8</h2>
+
+  <dl about="[_:b8]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">op</dd>
+  </dl></div><div><h2>_:b9</h2>
+
+  <dl about="[_:b9]">
+    <dt>varName</dt><dd property="ns4:varName" datatype="http://www.w3.org/2001/XMLSchema#string">pr</dd>
+  </dl></div></div>
+  
+<div about="http://purl.org/ontology/prv/propertyreificationrules.html" rel="dc:conformsTo"
+     resource="http://www.w3.org/TR/rdfa-syntax"></div>
+  <p about="http://purl.org/ontology/prv/propertyreificationrules.html">
+    <a href="http://validator.w3.org/check?uri=referer"><img style="border: 0; float: right; padding: 5px;"
+        src="http://www.w3.org/Icons/valid-xhtml-rdfa"
+        alt="Valid XHTML + RDFa" height="31" width="88" /></a>
+
+  <!-- Creative Commons License -->
+   <a href="http://creativecommons.org/licenses/by/1.0/"><img alt=
+  "Creative Commons License" style="border: 0; float: right; padding: 5px;" src=
+  "http://i.creativecommons.org/l/by/3.0/88x31.png" /></a> This work is licensed under a <a rel="license dc:license" href= 
+  "http://creativecommons.org/licenses/by/3.0/" title="Creative Commons
+  Attribution License">Creative Commons
+  Attribution License</a>. This copyright applies to the <em>Property Reification Vocabulary Rules Specification</em> 
+  and accompanying documentation in RDF.
+ Regarding underlying technology, the <em>Property Reification Vocabulary Rules Specification</em> uses W3C's <a href="http://www.w3.org/RDF/">RDF</a> technology, an
+  open Web standard that can be freely used by anyone, and <a rel="rdfs:seeAlso" href="http://spinrdf.org/">SPIN</a> (SPARQL Inferencing Notation).</p>
+  
+</body>
+</html>
